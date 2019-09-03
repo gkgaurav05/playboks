@@ -4,7 +4,7 @@
   tasks:
   - name: copy init file
     copy: 
-      src: /home/cs/demo.txt
+      src: /home/cs/projects/demo.txt
       dest: /tmp/demo.txt
       
     
