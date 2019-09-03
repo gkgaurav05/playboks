@@ -1,0 +1,10 @@
+---
+- hosts: web
+  name: copy file
+  tasks:
+  - name: copy init file
+    copy: 
+      src: /home/cs/demo.txt
+      dest: /tmp/demo.txt
+      
+    
