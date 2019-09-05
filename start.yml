@@ -1,0 +1,9 @@
+---
+- hosts: web
+  tasks:
+  - name: Start ActiveMQ
+    command: ./activemq start
+    async: 31536000
+    poll: 0
+    args:
+      chdir: /home/cs/activeMQ/activemq/bin
