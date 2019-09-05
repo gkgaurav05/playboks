@@ -1,0 +1,15 @@
+---
+- hosts: web
+  name: Stop Application
+  tasks:
+  - name: Get running processes
+    shell: "ps -ef | grep -v grep | grep -w {{ item }} | awk '{print $2}'"
+    register: running_processes
+    with_items:
+    - activemq
+
+  - name: kill running process
+    shell: "kill  {{ item }}"
+    with_items:
+    - "{{ running_processes.results[0].stdout_lines }}"
+
